@@ -1,0 +1,15 @@
+*{
+    background-color: rgb(207, 224, 249);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input{
+    border-radius:10%;
+    border-style: none;
+    background-color: antiquewhite;
+}
+input:focus, input:active, input:hover{
+    border-style: none;
+    border:0;
+    outline:0;
+}
