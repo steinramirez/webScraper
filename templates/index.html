@@ -1,29 +1,46 @@
-
 <!DOCTYPE html>
 <html>
 <head>
   <title>Web Scraper</title>
-  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
-
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <h1>Web Scraper</h1>
-  <form action="/" method="POST">
-    <label for="url">URL:</label>
-    <input type="text" name="url" id="url">
-    <br>
-    <label for="data">Data to scrape:</label>
-    <input type="text" name="data" id="data">
-    <br>
-    <button type="submit">Scrape</button>
-  </form>
-  <br>
-  {% if results %}
-    <ul>
-    {% for result in results %}
-      <li>{{ result }}</li>
-    {% endfor %}
-    </ul>
-  {% endif %}
+  <div style="height: 60px; background-color: rgb(21, 28, 59); padding: 10px;"> 
+    <h1 style="color: white;">Web Scraper</h1>
+  </div>
+  <div class="content">
+    <form method="post">
+      <label for="url">Enter URL:</label>
+      <input type="text" id="url" name="url"><br><br>
+      <label for="data">Enter Data:</label>
+      <input type="text" id="data" name="data"><br><br>
+      <button type="submit" value="Scrape">Scrape</button>
+      <button type="submit" name="clear" id="clear-button">Clear Data</button> <!-- Button to clear data -->
+      <button type="submit" name="download">Download Report</button>
+    </form>
+    <br/>
+    <h2>Results:</h2><br/>
+    {% if request.method == 'POST' %}
+      <h3>Total Number of elements: {{ results|length }}</h3><br/>
+    {% endif %}
+    <div class="content-results">
+      <ul>
+        <br/>
+        {% for result in results %}
+          <li>{{ result }}</li><br/>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Script to handle clearing data -->
+  <script>
+    document.getElementById('clear-button').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('url').value = ''; // Clear URL input
+      document.getElementById('data').value = ''; // Clear Data input
+    });
+  </script>
+
 </body>
 </html>

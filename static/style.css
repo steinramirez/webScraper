@@ -1,15 +1,56 @@
 *{
-    background-color: rgb(207, 224, 249);
+    
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0 auto;
+}
+
+body{
+    background-color: rgb(207, 224, 249);
 }
 
 input{
-    border-radius:10%;
+    border-radius:20px;
     border-style: none;
-    background-color: antiquewhite;
+    background-color: rgb(36, 79, 128);
+    padding: 10px;
 }
 input:focus, input:active, input:hover{
     border-style: none;
     border:0;
     outline:0;
+    color: white;
+}
+li, ul{
+    list-style-type:none;
+    list-style: none;
+}
+ul{
+    overflow-y: auto;
+}
+img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+  }
+.content{
+    padding:10px;
+}
+.content-results{
+    border: 0;
+    border-radius: 20px;
+    max-height: 400px;
+    min-height: 100px;
+    scroll-behavior: smooth;
+    background-color: white;
+    overflow-y: auto;
+}
+button{
+    border: 0;
+    padding:10px;
+    background-color: #3693d5;
+    color:white;
+    border-radius: 10%;
+}
+h1{
+    color:white;
 }
