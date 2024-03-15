@@ -1,46 +1,126 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Web Scraper</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+<style>
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Tooltip text */
+  .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+  }
+</style>
+
 <body>
-  <div style="height: 60px; background-color: rgb(21, 28, 59); padding: 10px;"> 
-    <h1 style="color: white;">Web Scraper</h1>
-  </div>
+  {% include 'nav-bar.html' %}
+
   <div class="content">
     <form method="post">
-      <label for="url">Enter URL:</label>
+      <div><span class="tooltiptext">Enter URL:</span>
+        <label for='url'>Enter URL:</label>
+      </div>
       <input type="text" id="url" name="url"><br><br>
-      <label for="data">Enter Data:</label>
+      <div>
+        <label for="data">Enter Data:</label>
+      </div>
       <input type="text" id="data" name="data"><br><br>
       <button type="submit" value="Scrape">Scrape</button>
       <button type="submit" name="clear" id="clear-button">Clear Data</button> <!-- Button to clear data -->
       <button type="submit" name="download">Download Report</button>
     </form>
-    <br/>
-    <h2>Results:</h2><br/>
+    <br />
+    <h2>Results:</h2><br />
     {% if request.method == 'POST' %}
-      <h3>Total Number of elements: {{ results|length }}</h3><br/>
+    <h3>Total Number of elements: {{ results|length }}</h3><br />
     {% endif %}
     <div class="content-results">
-      <ul>
-        <br/>
+      <ul class="income-text" id="result">
+        <br />
         {% for result in results %}
-          <li>{{ result }}</li><br/>
+        <li>{{ result }}</li><br />
         {% endfor %}
       </ul>
     </div>
   </div>
-
+  {% include 'footer.html' %}
   <!-- Script to handle clearing data -->
   <script>
-    document.getElementById('clear-button').addEventListener('click', function(e) {
+    document.getElementById('clear-button').addEventListener('click', function (e) {
       e.preventDefault();
       document.getElementById('url').value = ''; // Clear URL input
       document.getElementById('data').value = ''; // Clear Data input
     });
   </script>
 
+  <script>
+    document.addEventListener('mousemove', function (e) {
+      var tooltip = document.querySelector('.tooltiptext');
+
+      if (tooltip) {
+        tooltip.style.top = e.clientY + 'px';
+        tooltip.style.left = e.clientX + 'px';
+      }
+    });
+
+    function showTooltip() {
+      var tooltip = document.querySelector('.tooltiptext');
+
+      if (tooltip) {
+        tooltip.style.visibility = 'visible';
+      }
+    }
+
+    function hideTooltip() {
+      var tooltip = document.querySelector('.tooltiptext');
+
+      if (tooltip) {
+        tooltip.style.visibility = 'hidden';
+      }
+    }
+  </script>
+  <script>
+    // JavaScript to display the result letter by letter
+    const result = "{{ result }}"; // Get the income from Flask
+
+    function displayIncomeLetterByLetter() {
+        const resultDiv = document.getElementById('result');
+        let index = 0;
+
+        function addNextLetter() {
+            if (index < result.length) {
+                resultDiv.textContent += result.charAt(index);
+                index++;
+                setTimeout(addNextLetter, 100); // Adjust the delay (in milliseconds)
+            }
+        }
+
+        // Start the animation after a delay (e.g., 3 seconds)
+        setTimeout(addNextLetter, 3000);
+    }
+
+    // Call the function when the page loads
+    displayIncomeLetterByLetter();
+</script>
+
 </body>
+
 </html>

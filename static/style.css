@@ -3,23 +3,46 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 auto;
 }
-
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #d4d4d4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #386480;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
 body{
-    background-color: rgb(207, 224, 249);
+    background-color: rgb(27, 33, 65);
+    color: white;
+    width: 100%;
+    overflow-x: hidden;
+    height: auto;
 }
-
+a {
+    text-decoration: none;
+    color: white;
+}
 input{
     border-radius:20px;
     border-style: none;
-    background-color: rgb(36, 79, 128);
+    background-color: rgb(255, 246, 246);
     padding: 10px;
+    min-width: 280px;
+    max-width: 50%;    
 }
 input:focus, input:active, input:hover{
     border-style: none;
     border:0;
     outline:0;
-    color: white;
+    color: rgb(29, 61, 104);
 }
+
 li, ul{
     list-style-type:none;
     list-style: none;
@@ -33,24 +56,55 @@ img {
     border: 1px solid black;
   }
 .content{
-    padding:10px;
+    padding:50px;
+    min-height: 75dvh;
 }
 .content-results{
     border: 0;
-    border-radius: 20px;
+    border-radius: 20px 0px 0px 20px;
     max-height: 400px;
     min-height: 100px;
     scroll-behavior: smooth;
     background-color: white;
     overflow-y: auto;
+    margin-bottom:20px;
 }
 button{
     border: 0;
     padding:10px;
     background-color: #3693d5;
     color:white;
-    border-radius: 10%;
+    border-radius: 20px;
+    margin: 5px;
+    cursor: pointer;
 }
-h1{
-    color:white;
+
+label{
+    margin:10px;
+    width: 100px;
+}
+.faq-h1, .faq-h3, .faq-p{
+    margin:10px;
+}
+.income-text {
+    width:90%;
+    white-space: wrap;
+    overflow: hidden;
+    padding: 10px;
+    /* Animation */
+    animation: fadeUp 1.5s ease backwards; 
+}
+
+@keyframes fadeUp {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 90%;
+        opacity: 1;
+    }
+}
+.content-results{
+    color: rgb(27, 33, 65)
 }
