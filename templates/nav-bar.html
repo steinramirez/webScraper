@@ -1,38 +1,36 @@
-
-<style>
-    .nav-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    background-color: rgb(11, 15, 35);
-    width: 100dvw;
-}
-.buttons > a, .buttons > h1{
-    padding:10px;
-    border-radius: 20px;
-}
-
-.logo{
-    background-clip: text;
-    background-color: rgb(255, 255, 255);
-  color: transparent;
-  transition: background-color 1s ease;
-}
-.logo:hover, .buttons > a:hover{
-    
-    background-color: rgb(115, 203, 241);
-}
-
-
-</style>
-<div class="nav-bar"> 
+<nav class="nav-bar-no-tail shadow-2xl z-30">
     <div>
-    <h1 ><a href="/" class="logo">Webb Scraper</a></h1>
+        <a href="/" class="logo text-7xl pacifico">Webb Scraper</a>
     </div>
-    <div class="buttons">
-    <a href="/">Home</a>
-    <a href="/faq">F.A.Q</a>
+    <div class="buttons text-white">
+        <a class="text-white p-5 " href="/">Home</a>
+        <a class="text-white p-5 " href="/faq">F.A.Q</a>
+    </div>
+
+    <div type="button"
+        class="w-50 justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm align-middle lg:hidden"
+        id="menu-button" aria-expanded="false" aria-haspopup="true">
+        <img src="../static/assets/menu-burger.png" class="burger-menu align-middle lg:hidden">
+
+    </div>
+</nav>
+<!-- Dropdown menu -->
+<div class="relative w-full text-white rounded-b-lg bg-[#27456d] shadow-2xl focus:outline-none hidden d-buttons"
+    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="menu">
+    <!-- Menu items -->
+    <div class=" gap-y-5 text-white bg-[#27456d] rounded-b-lg flex flex-col" role="none">
+        <a href="/" class="text-white text-5xl w-full hover:bg-slate-400" role="menuitem" tabindex="-1"
+            id="menu-item-0">Home</a>
+        <a href="/faq" class="text-white text-5xl w-full hover:bg-slate-400" role="menuitem"
+            tabindex="-1" id="menu-item-1">F.A.Q</a>
     </div>
 </div>
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const menu = document.getElementById('menu');
+
+    menuButton.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+
+</script>
