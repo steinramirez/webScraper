@@ -54,5 +54,7 @@ def faq():
         faq_data = json.load(file)
     return render_template('faq.html', faq_data=faq_data)
 
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)

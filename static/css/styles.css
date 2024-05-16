@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+::-webkit-scrollbar {
+    width: 10px; /* adjust the width as needed */
+    height: 10px; /* adjust the height as needed */
+    background-color: #ccc; /* adjust the background color as needed */
+    border-radius: 10px; /* adjust the border radius as needed */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--web-background); /* adjust the thumb color as needed */
+    border-radius: 10px; /* adjust the border radius as needed */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* adjust the track background color as needed */
+    border-radius: 10px; /* adjust the border radius as needed */
+  }
 * {
 
     font-family: 'Poopins', Tahoma, Geneva, Verdana, sans-serif;
@@ -32,10 +49,6 @@ body {
     justify-content: space-between !important;
 }
 
-h3 {
-    font-size: 3rem !important;
-}
-
 
 .burger-menu {
     width: 70px;
@@ -44,14 +57,21 @@ h3 {
     border-style: none !important;
     justify-content: center;
 }
-.buttons{
-    visibility: none;
+
+.buttons {
+    font-size: 2em;
+    padding: 15px;
+    background: #3693d5;
+    border-radius: 20px;
+    color: white;
+    margin-top:10px;
 }
+
 .content {
     padding: 50px;
     margin-top: 50px;
     margin-left: 20px;
-    margin-right:20px;
+    margin-right: 20px;
     margin-bottom: 200px;
 
 }
@@ -59,15 +79,15 @@ h3 {
 .content-results {
     border: 0;
     border-radius: 20px 20px 20px 20px;
-    max-height: 50%;
-    min-height: 50dvh;
-    max-height: 100dvh;
+    min-height: 40dvh;
+    max-height: 50dvh;
     scroll-behavior: smooth;
-    background-color: rgb(247, 247, 247);
+    background-color: #f7f7f7;
     overflow-y: scroll;
-    margin: 10px;
-    font-size: 3rem;
+    margin: 30px;
+    font-size: 2em;
     margin-bottom: 100px;
+    width: 80dvw;
 }
 
 .content-results {
@@ -86,7 +106,7 @@ h3 {
     cursor: pointer;
 }
 
-.d-buttons{
+.d-buttons {
     padding: 30px !important;
 }
 
@@ -110,8 +130,13 @@ h3 {
     font-size: 2.5rem;
     color: rgb(67, 67, 67);
 }
-.form-style{
-    margin:30px 0 0 30px ;
+
+.form-style {
+    margin: 30px 0 0 30px;
+}
+.header-results{
+    border-radius: 20px;
+   
 }
 img {
     border: none !important;
@@ -127,7 +152,7 @@ input[type="text"] {
     min-width: 280px;
     max-width: 700px;
     height: 100px;
-    font-size: 3rem;
+    font-size: 2em;
     width: 700px;
 }
 
@@ -136,18 +161,16 @@ input:focus {
     border: 0;
     outline: 0;
     color: rgb(29, 61, 104);
-    font-size: 3rem;
+    font-size: 2em;
 }
 
-li,
-ul {
-    list-style-type: none;
-    list-style: none;
-    font: 3rem;
-}
-
-ul {
-    overflow-y: auto;
+.income-text {
+    width: 70%;
+    white-space: wrap;
+    overflow: hidden;
+    margin: 30px 0px 30px 30px;
+    font: 2rem;
+    animation: fadeUp 1.5s ease backwards;
 }
 
 img {
@@ -155,7 +178,16 @@ img {
     height: 200px;
     border: 1px solid black;
 }
+li,
+ul {
+    list-style-type: none;
+    list-style: none;
+    font-size: 1em;
+}
 
+ul {
+    overflow-y: auto;
+}
 
 label {
     margin: 10px;
@@ -164,13 +196,12 @@ label {
 
 .label-input {
     margin-bottom: 30px;
-    margin-top:30px;
+    margin-top: 20px;
     width: 100%;
 }
 
-.label-input,
-h2 {
-    font-size: 3rem;
+.label-input{
+    font-size: 2.2em;
 }
 
 .logo {
@@ -190,17 +221,14 @@ h2 {
     margin: 10px;
 }
 
-.income-text {
-    width: 90%;
-    white-space: wrap;
-    overflow: hidden;
-    margin:30px 0 30px 30px;
-    font: 3rem;
-    animation: fadeUp 1.5s ease backwards;
-}
-.pacifico{
+.nav-btn{
+   visibility:hidden;
+    }
+
+.pacifico {
     font-family: "Pacifico", cursive;
 }
+
 @keyframes fadeUp {
     from {
         opacity: 0;
@@ -223,12 +251,14 @@ h2 {
     margin: 0 auto;
     text-align: center;
 }
+
 /* Desktop media query */
 @media only screen and (min-width: 1080px) {
+
     /* Styles for desktop devices */
     .nav-bar-no-tail {
         background-color: #27456d;
-    
+
         height: 120px;
         padding: 10px;
         min-height: 130px;
@@ -237,16 +267,16 @@ h2 {
         align-items: center;
         justify-content: space-between !important;
     }
-    
-    h3 {
-        font-size: 2em !important;
-    }
-    
-    .buttons{
+
+    .buttons {
         font-size: 1.5em;
-        padding:20px;
+        padding: 15px;
+        background: #3693d5;
+        border-radius: 20px;
+        color: white;
+        margin-top:10px;
     }
-    
+
     .burger-menu {
         width: 70px;
         height: 70px;
@@ -255,50 +285,53 @@ h2 {
         justify-content: center;
         display: none;
     }
-    .blank-space-large{
+
+    .blank-space-large {
         height: 100px;
     }
-    .blank-space-small{
+
+    .blank-space-small {
         height: 50px;
     }
-    .d-buttons{
+
+    .d-buttons {
         padding: 30px !important;
     }
-    
+
     .dd-menu {
         border: 1px #27456d solid;
         background-color: #27456d;
         display: flex;
         flex-direction: column !important;
     }
-    
+
     .content {
-        padding: 50px;
-        margin-top: 50px;
+        padding: 0px;
         margin-left: 20px;
-        margin-right:20px;
-        margin-bottom: 0px;
-    
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
     }
-    
+
     .content-results {
         border: 0;
         border-radius: 20px 20px 20px 20px;
-        max-height: 50%;
-        min-height: 50dvh;
+        min-height: 63dvh;
         max-height: 100dvh;
         scroll-behavior: smooth;
-        background-color: rgb(247, 247, 247);
+        background-color: rgb(239, 238, 238);
         overflow-y: scroll;
-        margin: 10px;
-        font-size: 2rem;
-        margin-bottom: 100px;
+        font-size: 1em;
+        width: 55dvw;
+        overflow-x: hidden;
+        margin:0 auto;
+
     }
-    
+
     .content-results {
         color: rgb(27, 33, 65)
     }
-    
+
     .content>form>button {
         font-size: 1.5em;
         padding: 10px;
@@ -310,120 +343,139 @@ h2 {
         margin-top: 20px;
         cursor: pointer;
     }
-    
+
     .faq-h1 {
         font-size: 3rem;
         font-weight: 700;
     }
-    
+
     .faq-h3 {
         font-size: 2.8rem;
     }
-    
+
     .faq-p {
         font-size: 1.5em;
         color: rgb(67, 67, 67);
     }
-    .form-style{
-        margin:30px 0 0 30px ;
+
+    .form-style {
+        margin: 30px 0 0 30px;
+        width: 40%;
     }
+
+    h3 {
+        font-size: 1em !important;
+    }
+    .hero{
+        height: 50dvh;
+    }
+
     img {
         border: none !important;
         border-style: none !important;
-    
+
     }
-    
+
     input[type="text"] {
         border-radius: 20px;
         border-style: none;
         background-color: rgb(243, 243, 243);
         padding: 10px;
-        min-width: 280px;
+        min-width: 100px;
         max-width: 700px;
-        height: 50px;
-        font-size: 1.5rem;
-        width: 700px;
+        height: 40px;
+        font-size: 1em;
+        width: 300px;
     }
-    
+
     input:focus {
-        border-style: none;
-        border: 0;
+        border: 1px solid #3693d5;
         outline: 0;
         color: rgb(29, 61, 104);
-        font-size: 1.5rem;
+        font-size: 1em;
+        box-shadow: inset 0 0 5px #3693d5;
     }
     
+    .input {
+        width: 300px;
+    }
+    .income-text {
+        text-wrap: wrap;
+        overflow: hidden;
+        margin: 30px 30px 30px 30px;
+        font-size: 1.5rem;
+        animation: fadeUp 1.5s ease backwards;
+        padding: 0.5em;
+        width: 90%;
+    }
+
     li,
     ul {
         list-style-type: none;
         list-style: none;
-        font: 3rem;
+        font-size: 0.7em;
     }
-    
+    #results > li{
+        cursor:pointer;
+    }
     ul {
         overflow-y: auto;
     }
-    
+
     img {
         width: 200px;
         height: 200px;
         border: 1px solid black;
     }
-    
+
     label {
         margin: 10px;
         width: 100px;
     }
-    
+
     .label-input {
-        margin-bottom: 30px;
-        margin-top:30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
         width: 100%;
     }
-    
-    .label-input,
-    h2 {
-        font-size: 1.5em;
+
+    .label-input {
+        font-size: 1.3em;
     }
-    
+
     .logo {
         color: white;
         font-weight: 700;
         font-size: 4rem;
         text-decoration: none;
     }
-    
-    .input {
-        width: 300px;
-    }
-    
+
     .faq-h1,
     .faq-h3,
     .faq-p {
         margin: 10px;
     }
-    
-    .income-text {
-        width: 90%;
-        white-space: wrap;
-        overflow: hidden;
-        margin:30px 0 30px 30px;
-        font-size: 1.5rem;
-        animation: fadeUp 1.5s ease backwards;
+    .faq-h3{
+        font-size: 2em !important;
     }
-    .pacifico{
+
+    .nav-btn{
+        visibility: visible ;
+         }
+    .pacifico {
         font-family: "Pacifico", cursive;
     }
+
     @keyframes fadeUp {
         from {
             opacity: 0;
         }
-    
+
         to {
             opacity: 1;
         }
     }
-    
+
     .footer {
         background: rgb(45, 44, 44);
         color: white;
@@ -435,9 +487,38 @@ h2 {
         width: 100%;
         margin: 0 auto;
     }
-  }
-  @media only screen and (min-width: 530px) and (max-width:1079px){
-    .buttons{
-        display: none;
-    }
-  }
+    #custom-alert {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 30;
+      }
+      
+      #alert-message {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      
+      #alert-ok {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      #alert-ok:hover {
+        background-color: #3e8e41;
+      }
+}
+
+@media only screen and (min-width: 530px) and (max-width:1079px) {
+    
+}

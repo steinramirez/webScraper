@@ -9,11 +9,11 @@
         "answer": "WebbScraper can extract valuable keyword data from competitor websites, search engine results pages (SERPs), and industry forums. This data can help you identify relevant keywords to target in your own content.\nScraping competitor backlinks can provide insights into their link-building strategies and identify potential opportunities for you to acquire high-quality backlinks.\n"
       },
       {
-        "question": "What means Enter URL",
+        "question": "What does Enter URL mean?",
         "answer": "You can enter an url to web scrap it, you can do it with https:// or without it."
       },
       {
-        "question": "What means Enter Data",
+        "question": "What does Enter Data mean?",
         "answer": "You can enter a html tag that you would like web scrap as h1, h2, h3, h4, h5, h6, img, html, body, head, script and any other html tag, make sure you enter it without <>."
       }
     ]

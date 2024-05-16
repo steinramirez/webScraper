@@ -4,6 +4,6 @@
   },
  
   "scripts": {
-    "create-css": "npx tailwindcss -i ./static/src/styles.css -o ./static/css/output.css --watch"
+    "create-css": "npx tailwindcss -i ./static/css/styles.css -o ./static/css/output.css --watch"
   }
 }

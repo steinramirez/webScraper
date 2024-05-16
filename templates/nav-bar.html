@@ -2,27 +2,27 @@
     <div>
         <a href="/" class="logo text-7xl pacifico">Webb Scraper</a>
     </div>
-    <div class="buttons text-white">
-        <a class="text-white p-5 " href="/">Home</a>
-        <a class="text-white p-5 " href="/faq">F.A.Q</a>
+    <div class="text-white nav-btn">
+        <a class="text-white p-5" href="/">Home</a>
+        <a class="text-white p-5" href="/faq">F.A.Q</a>
     </div>
 
     <div type="button"
         class="w-50 justify-center gap-x-1.5 rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm align-middle lg:hidden"
         id="menu-button" aria-expanded="false" aria-haspopup="true">
-        <img src="../static/assets/menu-burger.png" class="burger-menu align-middle lg:hidden">
+        <img src="../static/assets/menu-burger.png" class="burger-menu align-middle">
 
     </div>
 </nav>
 <!-- Dropdown menu -->
-<div class="relative w-full text-white rounded-b-lg bg-[#27456d] shadow-2xl focus:outline-none hidden d-buttons"
-    role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="menu">
+<div class="absolute w-full text-white bg-[#27456d] p-10 rounded-b-lg shadow-2xl focus:outline-none hidden" role="menu"
+    aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1" id="menu">
     <!-- Menu items -->
-    <div class=" gap-y-5 text-white bg-[#27456d] rounded-b-lg flex flex-col" role="none">
-        <a href="/" class="text-white text-5xl w-full hover:bg-slate-400" role="menuitem" tabindex="-1"
+    <div class="text-white rounded-b-lg flex flex-col" role="none">
+        <a href="/" class="text-white text-4xl w-full hover:bg-slate-400 p-4" role="menuitem" tabindex="-1"
             id="menu-item-0">Home</a>
-        <a href="/faq" class="text-white text-5xl w-full hover:bg-slate-400" role="menuitem"
-            tabindex="-1" id="menu-item-1">F.A.Q</a>
+        <a href="/faq" class="text-white text-4xl w-full hover:bg-slate-400 p-4" role="menuitem" tabindex="-1"
+            id="menu-item-1">F.A.Q</a>
     </div>
 </div>
 <script>
