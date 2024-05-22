@@ -1,8 +1,0 @@
-Report for URL: https://www.integrisgroup.com
-Data: h2
-- <h2 style="text-align:center;white-space:pre-wrap;">Our Partners</h2>
-- <h2 style="text-align:center;white-space:pre-wrap;">Our Process</h2>
-- <h2 style="text-align:center;white-space:pre-wrap;">IT Consulting Services</h2>
-- <h2 style="text-align:center;white-space:pre-wrap;">Client Testimonials</h2>
-- <h2 style="text-align:center;white-space:pre-wrap;">Our Case Studies</h2>
-- <h2 style="text-align:center;white-space:pre-wrap;">Is Integris right for your business?</h2>

@@ -2,7 +2,7 @@
 {% include 'nav-bar.html' %}
 {% block content %}
 <div class="content">
- <!--  <div class="flex flex-row bg-white w-full hero shadow-2xl rounded-xl">
+  <!--  <div class="flex flex-row bg-white w-full hero shadow-2xl rounded-xl">
     <div class="w-1/2 p-5 flex items-center">
       <h1 class="text-5xl font-bold "> Web Scraping: Unlocking the Power of Data</h1>
     </div>
@@ -24,8 +24,11 @@
       <button type="submit" value="Scrape" class="w-72 justify-self-center buttons">Scrape</button>
       <button type="submit" name="clear" id="clear-button" class="w-72 justify-self-center buttons">Clear Data</button>
       <!-- Button to clear data -->
-      <!-- <button type="submit" name="download">Download Report</button> -->
+      
+      
     </form>
+    
+    
     <br />
     <div class="flex flex-col justify-center items-center shadow-slate-900">
       <div class="content-results h-10 resize-y shadow-inner scroll-smooth">
@@ -37,36 +40,49 @@
           <br />
           {% endif %}
           {% for result in results %}
-          <li class="text-[#ccc] italic mt-3"> Element result </li>
+          <a class="text-[#ccc] italic mt-3 text-sm"> Element result </a>
           <li>{{ result }}</li><br />
           {% endfor %}
         </ul>
-        
-        <div id="custom-alert" style="display: none;">
-          <div id="alert-message"></div>
-          <button id="alert-ok">OK</button>
+      
+
+        <!-- The notification popup -->
+        <div id="notification" style="display: none;">
+          <p id="notification-text"></p>
+          <button id="close-button">Copied!</button>
         </div>
       </div>
     </div>
-   
+
   </div>
-  
+
 </div>
 
 <script>
   const listItems = document.querySelectorAll('#result li');
+const notification = document.getElementById('notification');
+const notificationText = document.getElementById('notification-text');
+const closeButton = document.getElementById('close-button');
 
-  listItems.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      const text = e.target.textContent;
-      const textarea = document.createElement('textarea');
-      document.body.appendChild(textarea);
-      textarea.value = text;
-      textarea.select();
-      document.execCommand('copy');
-      document.body.removeChild(textarea);
-      console.log('You copied:', text)
-      alert(`You copied: ${text}`)
+listItems.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const text = e.target.textContent;
+    const textarea = document.createElement('textarea');
+    document.body.appendChild(textarea);
+    textarea.value = text;
+    textarea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textarea);
+    console.log( text );
+
+    // Show notification popup
+    notificationText.textContent = `${text}`;
+    notification.style.display = 'block';
+
+    // Auto-remove notification after 2 seconds
+    setTimeout(() => {
+      notification.style.display = 'none';
+    }, 2000);
     });
   });
 </script>

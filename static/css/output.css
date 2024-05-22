@@ -894,12 +894,12 @@ video {
   line-height: 1.25rem;
 }
 
-.font-semibold {
-  font-weight: 600;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .italic {
@@ -972,6 +972,14 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   /* adjust the width as needed */
@@ -1039,7 +1047,7 @@ body {
   background: #3693d5;
   border-radius: 20px;
   color: white;
-  margin-top:10px;
+  margin-top: 10px;
 }
 
 .content {
@@ -1106,7 +1114,7 @@ body {
   margin: 30px 0 0 30px;
 }
 
-.header-results{
+.header-results {
   border-radius: 20px;
 }
 
@@ -1133,6 +1141,7 @@ input:focus {
   outline: 0;
   color: rgb(29, 61, 104);
   font-size: 2em;
+  box-shadow: inset 0 0 10px #3693d5;
 }
 
 .income-text {
@@ -1190,8 +1199,8 @@ label {
   margin: 10px;
 }
 
-.nav-btn{
-  visibility:hidden;
+.nav-btn {
+  visibility: hidden;
 }
 
 .pacifico {
@@ -1206,6 +1215,34 @@ label {
   to {
     opacity: 1;
   }
+}
+
+#notification {
+  text-overflow: ellipsis;
+  white-space: wrap;
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  max-width: 600px;
+  height: auto;
+  background: var(--web-background);
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  z-index: 1000;
+  display: none;
+  border-radius: 1.5em;
+  cursor: pointer;
+}
+
+#close-button {
+  float: center;
+  margin-top: 30px;
 }
 
 .footer {
@@ -1243,7 +1280,7 @@ label {
     background: #3693d5;
     border-radius: 20px;
     color: white;
-    margin-top:10px;
+    margin-top: 10px;
   }
 
   .burger-menu {
@@ -1293,7 +1330,7 @@ label {
     font-size: 1em;
     width: 55dvw;
     overflow-x: hidden;
-    margin:0 auto;
+    margin: 0 auto;
     color: rgb(27, 33, 65);
   }
 
@@ -1332,7 +1369,7 @@ label {
     font-size: 1em !important;
   }
 
-  .hero{
+  .hero {
     height: 50dvh;
   }
 
@@ -1382,8 +1419,8 @@ label {
     font-size: 0.7em;
   }
 
-  #results > li{
-    cursor:pointer;
+  li {
+    cursor: pointer;
   }
 
   ul {
@@ -1421,12 +1458,12 @@ label {
     margin: 10px;
   }
 
-  .faq-h3{
+  .faq-h3 {
     font-size: 2em !important;
   }
 
-  .nav-btn{
-    visibility: visible ;
+  .nav-btn {
+    visibility: visible;
   }
 
   .pacifico {
@@ -1455,35 +1492,32 @@ label {
     margin: 0 auto;
   }
 
-  #custom-alert {
+  #notification {
+    text-overflow: ellipsis;
+    white-space: wrap;
+    overflow: hidden;
     position: fixed;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    z-index: 30;
-  }
-
-  #alert-message {
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-
-  #alert-ok {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    width: auto;
+    max-width: 600px;
+    height: auto;
+    background: var(--web-background);
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    display: none;
+    border-radius: 1.5em;
     cursor: pointer;
   }
 
-  #alert-ok:hover {
-    background-color: #3e8e41;
+  #close-button {
+    float: center;
+    margin-top: 30px;
   }
 }
 
